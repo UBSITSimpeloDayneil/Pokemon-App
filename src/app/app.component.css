@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #ffcb05, #3b4cca);
+    min-height: 100vh;
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
