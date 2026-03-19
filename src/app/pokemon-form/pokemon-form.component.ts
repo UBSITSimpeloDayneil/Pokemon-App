@@ -14,7 +14,7 @@ pokemonService = inject(PokemonService);
 pokemonForm = this.formBuilder.nonNullable.group({
   name:['', Validators.required],
   type:['', Validators.required],
-  level:['', Validators.required],
+  level:[1, [Validators.required, Validators.min(1)]],
   nature:['', Validators.required],
 });
 
@@ -23,6 +23,7 @@ onSubmit(){
     this.pokemonService.savePokemon(this.pokemonForm.getRawValue()).subscribe(() => {
       this.pokemonService.fetchPokemon();
       this.pokemonForm.reset();
+      console.log("Pokemon saved successfully!");
     })
   }
 }

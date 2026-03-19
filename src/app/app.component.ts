@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,5 @@ import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Pokemon-App';
+  protected readonly title = signal('pokemon-app');
 }

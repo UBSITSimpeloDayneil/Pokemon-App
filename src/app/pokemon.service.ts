@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokemonService {
 private http = inject(HttpClient);
-private apiURL = 'https://localhost:3000/api/pokemon';
+private apiURL = 'http://localhost:3000/api/pokemon';
 //Reactive state
 pokemonList = signal<any[]>([]);
 
@@ -17,4 +17,7 @@ fetchPokemon(){
   this.http.get<any[]>(this.apiURL).subscribe(data => this.pokemonList.set(data));
 }
 
+savePokemonService(data: any) {
+  return this.http.post(this.apiURL, data);
+ }
 }
